@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aswira Haider | Profile</title>
+<meta name="description" content="Personal profile of Aswira Haider: bio, skills, projects, education and contact.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch colour theme">Dark mode</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="photo"><img src="./photo.jpg" alt="Photo of Aswira Haider"></div>
+    <div>
+      <h1>Aswira Haider</h1>
+      <p class="role">Exploring the intersection of language and technology through Natural Language Processing (NLP), Python programming, text analysis, and computational approaches to language.</p>
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn alt" href="#projects">See my projects</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About me</h2>
+    <p class="bio">Literature student with interests in language, communication, creative writing, and computational linguistics. Exploring the relationship between literary expression and emerging language technologies while engaging in student-led initiatives.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git and GitHub</li><li>Problem solving</li><li>Formal Writing & Communication</li><li>Working with AI tools</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Personal profile page</h3>
+        <p>A single-file, responsive profile with light and dark modes, deployed live from GitHub.</p>
+        <a href="https://github.com/Aswira26/my-profile">View on GitHub</a>
+      </article>
+      <article class="card">
+        <h3>Project two</h3>
+        <p>Describe what it does and which tools you used in one or two sentences.</p>
+        <a href="#contact">Link coming soon</a>
+      </article>
+      <article class="card">
+        <h3>Project three</h3>
+        <p>Describe what it does and which tools you used in one or two sentences.</p>
+        <a href="#contact">Link coming soon</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu"><div><strong>F.Sc Pre-Medical</strong><span>Tameer-i-wattan Colleges, Abbottabad</span></div><span>2021 to 2023</span></div>
+    <div class="edu"><div><strong>B.S English Language & Literature</strong><span>National University of Modern Languages, Islamabad.</span></div><span>2023 to 2027</span></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li>Email: <a href="mailto:haideraswira@gmail.com">haideraswira@gmail.com</a></li>
+      <li>GitHub: <a href="https://github.com/Aswira26">github.com/Aswira26</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/aswira-haider-84038a377?utm_source=share_via&utm_content=profile&utm_medium=member_android">linkedin.com/in/aswira-haider-84038a377</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year">2026</span> Aswira Haider. Built with an AI assistant.</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  var mq=window.matchMedia('(prefers-color-scheme: dark)');
+  var saved=null;
+  try{saved=localStorage.getItem('theme');}catch(e){}
+  function current(){return root.getAttribute('data-theme')||(mq.matches?'dark':'light');}
+  function apply(t){
+    root.setAttribute('data-theme',t);
+    btn.textContent=t==='dark'?'Light mode':'Dark mode';
+  }
+  apply(saved||current());
+  btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    apply(next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
